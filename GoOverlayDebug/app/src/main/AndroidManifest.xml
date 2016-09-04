@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.waterfoul.gooverlaydebug">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".HomeService"
+            android:exported="true"
+            android:label="Debug Information">
+            <intent-filter>
+                <action android:name="net.waterfoul.gooverlay.APP_HOME" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:theme="@android:style/Theme.Dialog"
+            android:name=".SettingsActivity"
+            >
+            <intent-filter>
+                <action android:name="net.waterfoul.gooverlaydebug.SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+</manifest>
